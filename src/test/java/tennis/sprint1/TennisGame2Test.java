@@ -1,4 +1,4 @@
-package sprint1;
+package tennis.sprint1;
 
 import static org.junit.Assert.assertEquals;
 
