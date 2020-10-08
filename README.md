@@ -1,4 +1,4 @@
-# Tennis-Kata
+# Tennis Kata - Rodrigue Abou Naoum
 
 ## Sprint 1: Manage a tennis GAME within a set of a tennis match
 
