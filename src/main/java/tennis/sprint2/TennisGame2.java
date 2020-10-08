@@ -149,7 +149,7 @@ import tennis.model.TennisPlayer;
 		
 		//Returns boolean to determine if the match has gone into a tie-break
 		private boolean hasTieBreaker() {
-			if(player2.getPlayerSetScore() == 6 && player2.getPlayerSetScore() == 6 )
+			if(player1.getPlayerSetScore() == 6 && player2.getPlayerSetScore() == 6 )
 				return true;
 
 			return false;
@@ -157,15 +157,17 @@ import tennis.model.TennisPlayer;
 		
 		//Returns boolean to determine if the tie-break has a winner
 		private boolean hasTieBreakWinner() {
-			if(player2.getPlayerTieBreakerScore() >= 6 && player2.getPlayerTieBreakerScore() >= player1.getPlayerTieBreakerScore() + 2 )
+			if(player2.getPlayerTieBreakerScore() >= 7 && player2.getPlayerTieBreakerScore() >= player1.getPlayerTieBreakerScore() + 2 )
 				return true;
-			if(player1.getPlayerTieBreakerScore() >= 6 && player1.getPlayerTieBreakerScore() >= player2.getPlayerTieBreakerScore() + 2 )
+			if(player1.getPlayerTieBreakerScore() >= 7 && player1.getPlayerTieBreakerScore() >= player2.getPlayerTieBreakerScore() + 2 )
 				return true;
 			return false;
 		}
 		
 		//Returns boolean to determine if the set has a winner
 		private boolean hasSetWinner() {
+			if(player2.getPlayerSetScore() == 7 || player1.getPlayerSetScore() == 7  )
+				return true;
 			if(player2.getPlayerSetScore() >= 6 && player2.getPlayerSetScore() >= player1.getPlayerSetScore() + 2 )
 				return true;
 			if(player1.getPlayerSetScore() >= 6 && player1.getPlayerSetScore() >= player2.getPlayerSetScore() + 2 )

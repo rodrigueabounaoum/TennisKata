@@ -99,6 +99,8 @@ import tennis.model.TennisPlayer;
 		
 		//Returns boolean to determine if the set has a winner
 		private boolean hasSetWinner() {
+			if(player2.getPlayerSetScore() == 7 || player1.getPlayerSetScore() == 7  )
+				return true;
 			if(player2.getPlayerSetScore() >= 6 && player2.getPlayerSetScore() >= player1.getPlayerSetScore() + 2 )
 				return true;
 			if(player1.getPlayerSetScore() >= 6 && player1.getPlayerSetScore() >= player2.getPlayerSetScore() + 2 )

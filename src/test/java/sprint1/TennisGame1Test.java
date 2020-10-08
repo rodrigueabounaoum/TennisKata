@@ -21,27 +21,31 @@ public class TennisGame1Test {
 		tennisGame1 = new TennisGame1(player1 , player2) ;
 	}
 	
+	//Testing equal scores
 	@Test
-	public void Should_Players_Score_Be_Equal() {
+	public void PlayersScoreEqual() {
 		tennisGame1.winPoint(player1);
 		tennisGame1.winPoint(player2);
-		System.out.println(tennisGame1.getScore()); 
 		assertEquals("15 all", tennisGame1.getScore());
+		tennisGame1.winPoint(player1);
+		tennisGame1.winPoint(player2);
+		assertEquals("30 all", tennisGame1.getScore());
 	}
 
+	//Testing player 1 game win
 	@Test
-	public void Should_Player1_Win() {
+	public void Player1Win() {
 		tennisGame1.winPoint(player1);
 		tennisGame1.winPoint(player1);
 		tennisGame1.winPoint(player1);
 		tennisGame1.winPoint(player2);
 		tennisGame1.winPoint(player1);
-		System.out.println(tennisGame1.getScore()); 
 		assertEquals("Rodrigue1 wins the game", tennisGame1.getScore());
 	}
 
+	//Testing player 2 game win
 	@Test
-	public void Should_Player2Win() {
+	public void Player2Win() {
 		tennisGame1.winPoint(player2);
 		tennisGame1.winPoint(player2);
 		tennisGame1.winPoint(player2);
@@ -49,17 +53,20 @@ public class TennisGame1Test {
 		tennisGame1.winPoint(player1);
 		tennisGame1.winPoint(player1);
 		tennisGame1.winPoint(player2);
-		System.out.println(tennisGame1.getScore()); 
 		assertEquals("Rodrigue2 wins the game", tennisGame1.getScore());
 	}
 	
+	//Testing score reveal
 	@Test
-	public void Should_Reveal_Scores() {
+	public void RevealScores() {
 		tennisGame1.winPoint(player2);
+		assertEquals("Rodrigue1 : 0 , Rodrigue2 : 15", tennisGame1.getScore());
 		tennisGame1.winPoint(player2);
 		tennisGame1.winPoint(player1);
-		System.out.println(tennisGame1.getScore()); 
 		assertEquals("Rodrigue1 : 15 , Rodrigue2 : 30", tennisGame1.getScore());
+		tennisGame1.winPoint(player2);
+		tennisGame1.winPoint(player1);
+		assertEquals("Rodrigue1 : 30 , Rodrigue2 : 40", tennisGame1.getScore());
 	}
 	
 }
